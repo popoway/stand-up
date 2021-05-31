@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="renderer.css">
+    <title>StandUp!</title>
+  </head>
+  <body>
+    <h1>
+      <img src="./img/stand-up.png" id="stand-up-logo" alt="StandUp Logo">
+      StandUp!
+    </h1>
+    <p>Let's take a break after:</p>
+    <div id="count-down-form">
+      <input type="number" size="2" minlength="1" maxlength="2" min="0" max="24" value="01" id="hr">hr
+      <input type="number" size="2" minlength="1" maxlength="2" min="0" max="59" value="00" id="min">min
+      <input type="number" size="2" minlength="1" maxlength="2" min="0" max="59" value="00" id="sec">sec
+    </div>
+    <div id="count-down-control">
+      <button>Start</button>
+    </div>
+    <footer>
+      &copy; 2021 popoway<br>
+      We are using Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>.
+    </footer>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

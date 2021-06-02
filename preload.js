@@ -7,8 +7,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (element) element.innerText = text
   }
 
-  for (const dependency of ['chrome', 'node', 'electron']) {
+  for (const dependency of ['stand-up', 'chrome', 'node', 'electron']) {
     replaceText(`${dependency}-version`, process.versions[dependency])
   }
+  replaceText(`${require('./package.json').name}-version`, require('./package.json').version)
+  replaceText(`${require('./package.json').name}-author`, require('./package.json').author)
   console.log("preload.js completed")
 })

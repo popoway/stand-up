@@ -11,7 +11,7 @@
   </head>
   <body>
     <h1>
-      <img src="./img/stand-up.png" id="stand-up-logo" alt="StandUp Logo">
+      <img src="./img/stand-up.png" id="stand-up-logo" alt="StandUp Logo" draggable="false">
       StandUp!
     </h1>
     <p>Let's take a break after:</p>
@@ -21,13 +21,17 @@
       <input type="number" size="2" minlength="1" maxlength="2" min="0" max="59" value="00" id="sec">sec
     </div>
     <div id="count-down-control">
-      <button>Start</button>
+      <button id="count-down-start">Start</button>
+      <button id="count-down-pause" class="hidden">Pause</button>
+      <button id="count-down-resume" class="hidden">Resume</button>
+      <button id="count-down-reset" class="hidden">Reset</button>
     </div>
     <footer>
-      &copy; 2021 popoway<br>
+      StandUp! <span id="stand-up-version"></span> &copy; 2021 <span id="stand-up-author"></span><br>
       We are using Node.js <span id="node-version"></span>,
       Chromium <span id="chrome-version"></span>,
       and Electron <span id="electron-version"></span>.
+      UserAgent: <span id="user-agent" class="hidden"></span>
     </footer>
     <script src="./renderer.js"></script>
   </body>

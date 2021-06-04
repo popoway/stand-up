@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./out",
     "make": "electron-forge make",
+    "make-mac": "electron-forge make --platform darwin --arch all",
     "package": "electron-forge package",
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -36,12 +37,19 @@
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin"
+            "darwin",
+            "linux",
+            "win32"
           ]
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
+          "config": {
+            "options": {
+              "maintainer": "popoway",
+              "homepage": "https://github.com/popoway/stand-up"
+            }
+          }
         },
         {
           "name": "@electron-forge/maker-rpm",
